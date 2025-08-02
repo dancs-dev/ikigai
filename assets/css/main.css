@@ -1,0 +1,193 @@
+/* Global styles */
+:root {
+  --main-background: #f5f9fd;
+  --accent-background: #0a1f37;
+}
+
+/* merriweather-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Merriweather";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/merriweather-v32-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* ubuntu-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/ubuntu-v20-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* source-code-pro-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Source Code Pro";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/source-code-pro-v30-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+body {
+  font-family: Ubuntu, sans-serif;
+  background-color: var(--main-background);
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #0056b3;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h1 a {
+  color: inherit;
+}
+
+h1 a:hover {
+  text-decoration: none;
+}
+
+pre {
+  font-family: "Source Code Pro", monospace;
+  padding: 2px 5px;
+  border-radius: 0 0 10px 10px;
+  margin: 0;
+}
+
+code {
+  font-family: "Source Code Pro", monospace;
+  padding: 2px 5px;
+  border-radius: 0 0 10px 10px;
+  margin: 0;
+}
+
+svg,
+img {
+  height: 1em;
+  width: 1em;
+  vertical-align: -0.125em;
+  fill: currentColor;
+  display: inline-block;
+}
+
+/* Main content */
+
+header {
+  background-color: var(--accent-background);
+  padding: 20px 0;
+  text-align: center;
+}
+
+header h1 {
+  font-family: Merriweather, cursive;
+  font-size: 36px;
+  color: #fff;
+  margin: 0;
+}
+
+nav {
+  padding: 10px 0;
+  text-align: center;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 10px;
+}
+
+@media only screen and (max-width: 400px) {
+  nav ul li {
+    display: block;
+  }
+
+  nav ul li:not(:last-child):not(:first-child) {
+    padding: 10px;
+  }
+
+  nav ul li a {
+    display: block;
+    width: 100%;
+  }
+}
+
+nav ul li a {
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Main content */
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  margin-bottom: 70px;
+}
+
+article {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+
+article h2 {
+  font-family: "Goudy Old Style", serif;
+  font-size: 24px;
+  color: #333;
+  padding: 20px;
+  background-color: #f9e7b6;
+  margin-top: 0;
+}
+
+article p {
+  padding: 15px 20px;
+  line-height: 1.6;
+}
+
+/* Footer */
+footer {
+  background-color: var(--accent-background);
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+
+footer p {
+  margin: 0;
+}
+
+footer ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+footer ul li {
+  display: inline;
+  margin: 0 10px;
+}
+
+footer ul li a {
+  color: #fff;
+  font-weight: bold;
+  font-size: 2rem;
+}

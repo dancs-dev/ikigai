@@ -1,0 +1,8 @@
+<ul>
+    {{ range .Site.Params.contact }}
+    <li>
+        <a href="{{.href}}" target="_blank"><i class="{{.icon}}" title="{{.name}}"></i></a>
+    </li>
+    {{ end }}
+</ul>
+<small>Copyright &copy {{ now.Year }}, {{.Site.Params.author.name}}. All rights reserved.</small>
