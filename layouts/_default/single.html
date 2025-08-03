@@ -6,5 +6,9 @@
   <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
 
   {{ .Content }}
+  {{ if .Site.Params.feedback.enabled }}
+    <hr>
+    <small>Please <a href="{{ .Site.Params.feedback.repository }}/issues/new?title=Re: {{ .Title }}">open an issue</a> if you have any comments, questions, or issues.</small>
+  {{ end }}
   {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
 {{ end }}
