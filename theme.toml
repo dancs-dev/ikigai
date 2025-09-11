@@ -1,6 +1,6 @@
 name = 'Ikigai'
 license = 'GNU GPLv3'
-licenselink = 'https://github.com/dancs-dev/ikigai/COPYING'
+licenselink = 'https://github.com/dancs-dev/ikigai/LICENCE'
 description = 'A simple Hugo theme.'
 
 # The home page of the theme, where the source can be found
