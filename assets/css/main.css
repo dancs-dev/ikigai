@@ -10,7 +10,7 @@
   font-family: "Merriweather";
   font-style: normal;
   font-weight: 400;
-  src: url("/fonts/merriweather-v32-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url({{ relURL "fonts/merriweather-v32-latin-regular.woff2"}}) format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
 /* ubuntu-regular - latin */
@@ -19,7 +19,7 @@
   font-family: "Ubuntu";
   font-style: normal;
   font-weight: 400;
-  src: url("/fonts/ubuntu-v20-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url({{ relURL "fonts/ubuntu-v20-latin-regular.woff2"}}) format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
 /* source-code-pro-regular - latin */
@@ -28,7 +28,7 @@
   font-family: "Source Code Pro";
   font-style: normal;
   font-weight: 400;
-  src: url("/fonts/source-code-pro-v30-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url({{ relURL "fonts/source-code-pro-v30-latin-regular.woff2"}} ) format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
 body {

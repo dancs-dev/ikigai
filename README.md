@@ -40,6 +40,6 @@ Beyond the usual Hugo configuration:
 
     [params.contact.rss]
         name = 'RSS'
-        href = '/index.xml'
+        href = 'index.xml'
         icon = 'bi bi-rss-fill'
 ```

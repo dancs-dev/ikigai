@@ -1,7 +1,11 @@
 <ul>
     {{ range .Site.Params.contact }}
     <li>
-        <a href="{{.href}}" target="_blank"><i class="{{.icon}}" title="{{.name}}"></i></a>
+        {{if strings.HasPrefix .href "http"}}
+            <a href="{{.href}}" target="_blank"><i class="{{.icon}}" title="{{.name}}" rel="noreferrer"></i></a>
+        {{else}}
+            <a href="{{.href | relURL}}" target="_blank"><i class="{{.icon}}" title="{{.name}}"></i></a>
+        {{end}}
     </li>
     {{ end }}
 </ul>

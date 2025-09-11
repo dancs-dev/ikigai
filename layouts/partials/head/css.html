@@ -1,9 +1,10 @@
-{{- with resources.Get "css/main.css" }}
-  {{- if eq hugo.Environment "development" }}
-    <link rel="stylesheet" href="{{ .RelPermalink }}">
-  {{- else }}
-    {{- with . | minify | fingerprint }}
-      <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
-    {{- end }}
+{{ $templateStyle := resources.Get "css/main.css" }}
+{{ $style := $templateStyle | resources.ExecuteAsTemplate "css/style.css" . }}
+
+{{- if eq hugo.Environment "development" }}
+  <link rel="stylesheet" type="text/css" href="{{ $style.RelPermalink }}">
+{{- else }}
+  {{- with $style | minify | fingerprint }}
+    <link rel="stylesheet" type="text/css" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" crossorigin="anonymous">
   {{- end }}
 {{- end }}
