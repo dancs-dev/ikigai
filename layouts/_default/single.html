@@ -5,10 +5,23 @@
   {{ $dateHuman := .Date | time.Format ":date_long" }}
   <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
 
+  {{ if .Params.repo }}
+    <p>
+      <small>
+        <a href="{{ .Params.repo }}" target="_blank" rel="noreferrer">
+          <i class="bi bi-code-slash"></i> View the code
+        </a>
+      </small>
+    </p>
+  {{ end }}
+
   {{ .Content }}
   {{ if .Site.Params.feedback.enabled }}
     <hr>
-    <small>Please <a href="{{ .Site.Params.feedback.repository }}/issues/new?title=Re: {{ .Title }}">open an issue</a> if you have any comments, questions, or issues.</small>
+    <small>
+      Please <a href="{{ .Site.Params.feedback.repository }}/issues/new?title=Re: {{ .Title }}">open an issue</a>
+      if you have any comments, questions, or issues.
+    </small>
   {{ end }}
   {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
 {{ end }}

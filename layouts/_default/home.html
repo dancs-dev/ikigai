@@ -3,17 +3,26 @@
   {{ .Content }}
 
   <h2>Recent posts</h2>
-  {{ range .Pages }}
-    <h3> {{.LinkTitle}} </h3>
-    {{range first 3 .RegularPages}}
+  {{ $orderedPages := slice }}
+
+  {{ range sort .Site.Menus.main "Weight" }}
+    {{ if and .Page (not .Page.IsHome) }}
+      {{ $orderedPages = $orderedPages | append .Page }}
+    {{ end }}
+  {{ end }}
+
+  {{ range $orderedPages }}
+    <h3>{{ .LinkTitle }}</h3>
+
+    {{ range first 3 .RegularPages }}
       <ul>
         <li>
-        <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+          <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
         </li>
       </ul>
+    {{ else }}
+      <p>Nothing found yet!</p>
     {{ end }}
-  {{ else }}
-    <p>Nothing found yet!</p>
   {{ end }}
 
 {{ end }}
