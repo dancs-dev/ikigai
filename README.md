@@ -183,6 +183,26 @@ As this is a theme and not a standalone site, test changes by using it within a 
 3. Make changes to theme files and preview in the browser.
 4. Hugo's live reload will automatically rebuild the site upon changes to content, layouts, or configuration.
 
+## Contributing
+
+This is a theme for my personal portfolio site, but suggestions and bug reports are welcome. Please open an issue.
+
+## Commit convention
+
+This project follows [Conventional Commits](https://www.conventionalcommits.org/):
+
+- `feat:` new features or content.
+- `fix:` bug fixes.
+- `chore:` routine tasks, dependency updates.
+- `ci:` CI/CD pipeline changes.
+- `docs:` documentation updates.
+- `style:` code-formatting changes.
+
+Example:
+```bash
+git commit -m "feat: add a cool new feature"
+git commit -m "fix: fix a bug"
+```
 ## Credits
 
 - Code block copy button implementation inspired by [Aaron Luna's blog post](https://aaronluna.dev/blog/add-copy-button-to-code-blocks-hugo-chroma/).
