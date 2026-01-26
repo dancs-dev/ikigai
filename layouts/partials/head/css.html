@@ -1,10 +1,23 @@
+<link rel="preload" href="{{ relURL "fonts/ubuntu-v20-latin-regular.woff2" }}" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ relURL "fonts/merriweather-v32-latin-regular.woff2" }}" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ relURL "fonts/merriweather-v33-latin-700.woff2" }}" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ relURL "fonts/source-code-pro-v30-latin-regular.woff2" }}" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ relURL "fonts/bootstrap-icons.woff2" }}" as="font" type="font/woff2" crossorigin>
+
 {{ $templateStyle := resources.Get "css/main.css" }}
 {{ $style := $templateStyle | resources.ExecuteAsTemplate "css/style.css" . }}
 
+{{ $templateIcons := resources.Get "css/bootstrap-icons.css" }}
+{{ $icons := $templateIcons | resources.ExecuteAsTemplate "css/icons.css" . }}
+
 {{- if eq hugo.Environment "development" }}
   <link rel="stylesheet" type="text/css" href="{{ $style.RelPermalink }}">
+  <link rel="stylesheet" type="text/css" href="{{ $icons.RelPermalink }}">
 {{- else }}
   {{- with $style | minify | fingerprint }}
-    <link rel="stylesheet" type="text/css" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+  {{- end }}
+  {{- with $icons | minify | fingerprint }}
+    <link rel="stylesheet" type="text/css" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
   {{- end }}
 {{- end }}
