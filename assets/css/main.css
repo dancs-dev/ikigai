@@ -3,7 +3,6 @@
   --main-background: #f5f9fd;
   --accent-background: hsl(212, 69%, 10%);
   --anchor-color: hsl(212, 69%, 35%);
-  /* --accent-background: #0a1f37; */
 }
 
 /* merriweather-regular - latin */
@@ -199,7 +198,7 @@ footer ul li a {
   font-size: 2rem;
 }
 
-/* Responsive Design */
+/* Responsive design */
 
 /* Tablet and below */
 @media screen and (max-width: 768px) {
